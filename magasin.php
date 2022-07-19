@@ -1,12 +1,37 @@
 <?php
 class Magasin{
-
+   private float $solde;
+   private produit $produit;
+   public function getSolde(){
+    return $this->solde;
+}
+public function setSolde(float $solde):float{
+    $this->solde=$solde;
+}
+public function getProduit(){
+    return $this->produit;
 }
 
-class Produit{
+public function setProduit(produit $produit):produit{
+    $this->produit=$produit;
+}
+public function __construct(float $solde, produit $produit){
+    $this->solde=$solde;
+    $this->prosuit=$produit;
+    
+}  
+public function ajouterProduit(String $nom,float $prixAchat, float $prixVente);
+
+public function acheterProduit(int $referenceProduit,int $nbExemplaire);
+
+public function vendreProduit(int $referenceProduit,int $nbExemplaire);
+}
+
+
+class Produit extends Magasin{
     private string $nom;
-    private int $prixAchat;
-    private int $prixVente;
+    private float $prixAchat;
+    private float $prixVente;
     private int $nbExemplaire;
     private string $description;
     public function getNom(){
@@ -27,10 +52,10 @@ class Produit{
     public function setNom(string $nom):string{
         $this->nom=$nom;
     }
-    public function setPrixAchat(int $prixAchat):int{
+    public function setPrixAchat(float $prixAchat):float{
         $this->prixAchat=$prixAchat;
     }
-    public function setPrixVente(int $prixVente):int{
+    public function setPrixVente(float $prixVente):float{
         $this->prixAchat=$prixVente;
     }
     public function setNbExemplaire(int $nbExemplaire):int{
@@ -39,16 +64,27 @@ class Produit{
     public function setDescription(string $description):string{
         $this->description=$description;
     }
-    public function __construct(string $nom, int $prixAchat, int $prixVente){
+    public function __construct(string $nom, float $prixAchat, float $prixVente){
         $this->nom=$nom;
         $this->prixAchat=$prixAchat;
         $this->prixVente=$prixVente;
     }  
-    $description="default";
-    $nbExemplaire=0;
-
-
-class Livre extends Produit{
+    $ description ="pas de descrition" ;
+    $nbExemplaire = Null;
     
 }
+class Livre extends Produit{
+
+}
+class Cd extends Produit{
+    private string $auteur;
+    private string $interprete;
+    private string $titres;
+    
+}
+
+
+    
+
+
 ?>
